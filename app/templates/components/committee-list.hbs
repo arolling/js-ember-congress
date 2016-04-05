@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col s4">
+    <div class="house">
+      <h3 class="center-align">House</h3>
+      <ul class="collection">
+        {{#each houseCommittees as |committee|}}
+          {{#link-to 'committee' committee.committee_id class="collection-item"}}{{committee.name}}{{/link-to}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="col s4">
+    <div class="senate">
+      <h3 class="center-align">Senate</h3>
+      <ul class="collection">
+        {{#each senateCommittees as |committee|}}
+          {{#link-to 'committee' committee.committee_id class="collection-item"}}{{committee.name}}{{/link-to}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="col s4">
+    <div class="joint">
+      <h3 class="center-align">Joint</h3>
+      <ul class="collection">
+        {{#each jointCommittees as |committee|}}
+          {{#link-to 'committee' committee.committee_id class="collection-item"}}{{committee.name}}{{/link-to}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

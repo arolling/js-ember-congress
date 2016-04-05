@@ -7,6 +7,7 @@ export default Ember.Route.extend({
     var key = config.myApiKey;
     var url = 'http://congress.api.sunlightfoundation.com/committees?subcommittee=false&per_page=all&apikey=' + key;
     return Ember.$.getJSON(url).then(function(responseJSON){
+      console.log(responseJSON.results[4]);
       return responseJSON.results;
     });
   }
