@@ -1,12 +1,13 @@
-<div class="collection with-header">
-  <div class="collection-header">
+<ul class="collection with-header">
+  <li class="collection-header">
     <h4>Active Bills</h4>
-  </div>
+  </li>
   {{#each bills as |bill|}}
-    <a href="{{bill.urls.govtrack}}" class="collection-item">
-      <span class="truncate">{{#if bill.short_title}}{{bill.short_title}}{{else}}{{bill.official_title}}{{/if}}</span>
+    <li class="collection-item">
+      <p><a href="{{bill.urls.govtrack}}">{{#if bill.short_title}}{{bill.short_title}}{{else}}{{bill.official_title}}{{/if}}</a><br><a class="secondary-content" {{action "setSponsors" bill}}><i class="material-icons">person_pin</i></a>
       Introduced {{moment-calendar bill.introduced_on}}<br>
-      Last Active {{moment-from-now bill.last_action_at}}
-    </a>
+      Last Active {{moment-from-now bill.last_action_at}}<br></p>
+
+    </li>
   {{/each}}
-</div>
+</ul>

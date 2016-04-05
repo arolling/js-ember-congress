@@ -1,0 +1,7 @@
+
+<div class="collection with-header">
+  <div class="collection-header"><h4>Members</h4></div>
+  {{#each members as |member|}}
+    <a href="{{member.legislator.website}}" target="_blank" class="collection-item">{{member.legislator.first_name}} {{member.legislator.last_name}}</a>
+  {{/each}}
+</div>

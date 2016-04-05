@@ -13,12 +13,7 @@
       {{bills-tile bills=model.bills}}
     </div>
     <div class="col s6">
-      <div class="collection with-header">
-        <div class="collection-header"><h4>Members</h4></div>
-        {{#each committee.members as |member|}}
-          <a href="{{member.legislator.website}}" target="_blank" class="collection-item">{{member.legislator.first_name}} {{member.legislator.last_name}}</a>
-        {{/each}}
-      </div>
+      {{members-tile members=committee.members}}
     </div>
   </div>
 
