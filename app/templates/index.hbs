@@ -1,1 +1,6 @@
-{{outlet}}
+
+<ul>
+  {{#each model as |committee|}}
+    <li>{{committee.name}} - {{committee.chamber}}</li>
+  {{/each}}
+</ul>
