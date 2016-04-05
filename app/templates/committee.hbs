@@ -1,7 +1,33 @@
-{{#each model as |committee|}}
+{{log model}}
+{{#each model.committee as |committee|}}
+  {{log committee}}
   <h2>Details for <a href="{{committee.url}}" target="_blank">{{committee.name}}</a></h2>
-  <h4>Subcommittees</h4>
-  {{#each committee.subcommittees as |subcommittee|}}
-    <h5>{{#link-to 'subcommittee' subcommittee.committee_id}}{{subcommittee.name}}{{/link-to}}</h5>
-  {{/each}}
+  <div class="row">
+    <div class="col s6">
+      <div class="collection with-header">
+        <div class="collection-header"><h4>Subcommittees</h4></div>
+        {{#each committee.subcommittees as |subcommittee|}}
+          {{#link-to 'subcommittee' subcommittee.committee_id class="collection-item"}}<h5>{{subcommittee.name}}</h5>{{/link-to}}
+        {{/each}}
+      </div>
+
+      <div class="collection with-header">
+        <div class="collection-header">
+          <h4>Active Bills</h4>
+        </div>
+        {{#each model.bills as |bill|}}
+          <a href="{{bill.urls.govtrack}}" class="collection-item">{{bill.short_title}} - introduced {{moment-from-now bill.introduced_on}}</a>
+        {{/each}}
+      </div>
+    </div>
+    <div class="col s6">
+      <div class="collection with-header">
+        <div class="collection-header"><h4>Members</h4></div>
+        {{#each committee.members as |member|}}
+          <a href="{{member.legislator.website}}" target="_blank" class="collection-item">{{member.legislator.first_name}} {{member.legislator.last_name}}</a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
 {{/each}}
