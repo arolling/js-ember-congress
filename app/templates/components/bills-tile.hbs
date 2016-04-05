@@ -6,7 +6,7 @@
     <a href="{{bill.urls.govtrack}}" class="collection-item">
       <span class="truncate">{{#if bill.short_title}}{{bill.short_title}}{{else}}{{bill.official_title}}{{/if}}</span>
       Introduced {{moment-calendar bill.introduced_on}}<br>
-      Last Active {{moment-from-now bill.history.active_at}}
+      Last Active {{moment-from-now bill.last_action_at}}
     </a>
   {{/each}}
 </div>
