@@ -1,8 +1,7 @@
 {{#each model as |committee|}}
-  <h2>Details for {{committee.name}}</h2>
-  {{log committee}}
+  <h2>Details for <a href="{{committee.url}}" target="_blank">{{committee.name}}</a></h2>
   <h4>Subcommittees</h4>
   {{#each committee.subcommittees as |subcommittee|}}
-    <h5>{{subcommittee.name}}</h5>
+    <h5>{{#link-to 'subcommittee' subcommittee.committee_id}}{{subcommittee.name}}{{/link-to}}</h5>
   {{/each}}
 {{/each}}
