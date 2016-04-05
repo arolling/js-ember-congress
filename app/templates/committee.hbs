@@ -1,1 +1,8 @@
-{{outlet}}
+{{#each model as |committee|}}
+  <h2>Details for {{committee.name}}</h2>
+  {{log committee}}
+  <h4>Subcommittees</h4>
+  {{#each committee.subcommittees as |subcommittee|}}
+    <h5>{{subcommittee.name}}</h5>
+  {{/each}}
+{{/each}}

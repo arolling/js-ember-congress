@@ -1,6 +1,17 @@
 
+<div class="house">
+  <h3>House</h3>
+</div>
+
+<div class="senate">
+  <h3>Senate</h3>
+</div>
+
+<div class="joint">
+  <h3>Joint</h3>
+</div>
 <ul>
   {{#each model as |committee|}}
-    <li>{{committee.name}} - {{committee.chamber}}</li>
+    {{#link-to 'committee' committee.committee_id}}<li>{{committee.name}}</li>{{/link-to}}
   {{/each}}
 </ul>

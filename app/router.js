@@ -6,7 +6,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('committee');
+  this.route('committee', {path: '/committee/:committee_id'});
 });
 
 export default Router;
