@@ -18,15 +18,4 @@ export default Ember.Route.extend({
 
     });
   },
-
-  // afterModel: function(params){
-  //   console.log(params[0].committee_id);
-  //   var url = 'http://congress.api.sunlightfoundation.com/bills?committee_ids=' + params[0].committee_id + '&apikey=882877952f00411b8e6d7b7a89045c5e';
-  //   return Ember.$.getJSON(url).then(function(responseJSON){
-  //     console.log(responseJSON.results);
-  //     return responseJSON.results;
-  //   });
-  // }
-
-
 });

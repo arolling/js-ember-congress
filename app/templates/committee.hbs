@@ -10,18 +10,7 @@
         {{/each}}
       </div>
 
-      <div class="collection with-header">
-        <div class="collection-header">
-          <h4>Active Bills</h4>
-        </div>
-        {{#each model.bills as |bill|}}
-          <a href="{{bill.urls.govtrack}}" class="collection-item">
-            <span class="truncate">{{#if bill.short_title}}{{bill.short_title}}{{else}}{{bill.official_title}}{{/if}}</span>
-            Introduced {{moment-calendar bill.introduced_on}}<br>
-            Last Active {{moment-from-now bill.history.active_at}}
-          </a>
-        {{/each}}
-      </div>
+      {{bills-tile bills=model.bills}}
     </div>
     <div class="col s6">
       <div class="collection with-header">
